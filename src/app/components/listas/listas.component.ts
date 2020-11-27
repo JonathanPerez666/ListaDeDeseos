@@ -19,7 +19,7 @@ export class ListasComponent implements OnInit {
 
   listaSeleccionada( lista: Lista ){
 
-    if( this.terminada){
+    if ( this.terminada){
       this.router.navigateByUrl(`/tabs/tab2/agregar/${ lista.id }`);
 
     } else{
@@ -29,5 +29,9 @@ export class ListasComponent implements OnInit {
 
 
   }
+
+  borrarLista(lista: Lista){
+    this.deseosService.borrarLista(lista);
+   }
 
 }
