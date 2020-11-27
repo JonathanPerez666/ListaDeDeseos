@@ -46,7 +46,7 @@ export class AgregarPage implements OnInit {
             .filter( itemData => !itemData.completado )
             .length;
 
-    if( pendientes === 0 ) {
+    if ( pendientes === 0 ) {
       this.lista.terminadaEn = new Date();
       this.lista.terminada = true;
     } else{
@@ -59,6 +59,13 @@ export class AgregarPage implements OnInit {
     this.deseosService.guardarStorage();
 
     console.log(this.deseosService.listas);
+
+  }
+
+  borrar( i: number ){
+
+    this.lista.items.splice( i, 1 );
+    this.deseosService.guardarStorage();
 
   }
 
